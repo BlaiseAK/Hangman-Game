@@ -18,6 +18,11 @@ var guessesLeft = 12;
 var incorrectArr = [];
 var answerArr = [];
 
+console.log(wins);
+console.log(losses);
+console.log(guessesLeft);
+console.log(incorrectArr);
+console.log(answerArr);
 
 
 function newGame() {
@@ -32,11 +37,15 @@ function newGame() {
 
 var compChoice = wordsBankArr[Math.floor(Math.random()*wordsBankArr.length)];
 
+console.log(compChoice);
+
 // turn selected word into an array of letters
 
 for (var i = 0; i < compChoice.length; i++); {
     wordArr.push(compChoice[i]);
 }
+
+console.log(wordArr);
 
 // establish array of correct letter guessed
 
@@ -44,15 +53,21 @@ for (var j = 0; j < compChoice.length; j++); {
     answerArr.push("_");
 }
 
+console.log(answerArr);
+
 document.onkeyup = function (event) {
 
 
     var userGuess = event.key.toLowerCase();
+    console.log(userGuess);
 
-    var indexWordArr = wordArr.indexOf(userGuess)
+    var indexWordArr = wordArr.indexOf(userGuess);
+    
+    console.log(indexIncorrectArr);
 
-    var indexIncorrectArr = incorrectArr.indexOf(userGuess)
-
+    var indexIncorrectArr = incorrectArr.indexOf(userGuess);
+    
+    console.log(indexIncorrectArr);
 
     // loop game with condition that selected word array === guessed correct array
 
