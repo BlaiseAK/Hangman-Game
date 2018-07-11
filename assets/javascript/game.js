@@ -1,12 +1,14 @@
 // create words array
-
-var wordsBankArr = ["tardis", "games", "", "dnd"]
+document.addEventListener("DOMContentLoaded", function(event) {
+    
+  
+var wordsBankArr = ["tardis", "games", "board", "dnd"];
 
 
 
 // find length of selected word
 
-var wordArr = []
+var wordArr = [];
 
 
 
@@ -17,43 +19,32 @@ var losses = 0;
 var guessesLeft = 12;
 var incorrectArr = [];
 var answerArr = [];
+var lettersInWord = [];
+var compChoice = "";
+var numberOfBlanks = 0;
 
 console.log(wins);
 console.log(losses);
 console.log(guessesLeft);
 console.log(incorrectArr);
 console.log(answerArr);
-
+console.log(compChoice);
 
 function newGame() {
     guessesLeft = 12;
     incorrectArr = [];
     answerArr = [];
     compChoice = wordsBankArr[Math.floor(Math.random()*wordsBankArr.length)];
-
+    lettersInWord = compChoice.split("");
+    console.log(lettersInWord);
+    numberOfBlanks = lettersInWord.length;
+    console.log(numberOfBlanks);
+    for (var i = 0; i < numberOfBlanks; i++) {
+        answerArr.push("_");
+    }
+    console.log(answerArr);
 }
-
-    // select word at random from words array
-
-var compChoice = wordsBankArr[Math.floor(Math.random()*wordsBankArr.length)];
-
-console.log(compChoice);
-
-// turn selected word into an array of letters
-
-for (var i = 0; i < compChoice.length; i++); {
-    wordArr.push(compChoice[i]);
-}
-
-console.log(wordArr);
-
-// establish array of correct letter guessed
-
-for (var j = 0; j < compChoice.length; j++); {
-    answerArr.push("_");
-}
-
-console.log(answerArr);
+newGame();
 
 document.onkeyup = function (event) {
 
@@ -71,7 +62,7 @@ document.onkeyup = function (event) {
 
     // loop game with condition that selected word array === guessed correct array
 
-    while (wordArr !== answerArr) {
+    while (lettersInWord !== answerArr) {
 
 
         // if guessed letter is in selected word array then in the guessed correct array replace "_" with letter guessed
@@ -118,4 +109,5 @@ document.onkeyup = function (event) {
 
     document.querySelector("#game").innerHTML = html;
 
-}
+};
+});
