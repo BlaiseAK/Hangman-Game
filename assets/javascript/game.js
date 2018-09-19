@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     
   
-var wordsBankArr = ["tardis", "games", "board", "dnd"];
+var wordsBankArr = ["rebellion", "endor", "empire", "xwing", "ywing", "bwing", "awing", "millenium falcon"];
 
 
 
@@ -62,7 +62,6 @@ document.onkeyup = function (event) {
 
     // loop game with condition that selected word array === guessed correct array
 
-    while (lettersInWord !== answerArr) {
 
 
         // if guessed letter is in selected word array then in the guessed correct array replace "_" with letter guessed
@@ -97,7 +96,7 @@ document.onkeyup = function (event) {
             wins ++;
 
         }
-    }
+
     
     var html = 
     "<p>Wins: " + wins + "</p>" +
