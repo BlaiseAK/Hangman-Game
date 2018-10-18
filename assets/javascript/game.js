@@ -11,6 +11,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     // establish wins, losses, guesses left, and incorrect letter array
 
+    // guesses left to win the game
+    let guessesLeft = 12;
+    // all letters guess will go in this array
+    let lettersGuessedArry = [];
+    // all letters that will show '-' until updated with correct letters
+    let lettersCorrectArry = [];
+    // array of letters for the lettersCorrectArry to match to win game!
+    let compChoiceArry = [];
+
+
+
     let wins = 0;
     let losses = 0;
     let guessesLeft = 12;
@@ -23,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log(`Wins: ${wins}`);
     console.log(`Losses: ${losses}`);
     console.log(`Guesses left: ${guessesLeft}`);
-    console.log(`${incorrectArr}`);
+    console.log(`The incorrect result${incorrectArr}`);
     console.log(`${answerArr}`);
     console.log(`${compChoice}`);
 
